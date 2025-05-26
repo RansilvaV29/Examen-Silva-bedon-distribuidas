@@ -12,7 +12,7 @@ public abstract class EvaluadorRiesgo {
         if (cliente.getPuntajeCrediticio() < 650) {
             puntaje -= 30;
         }
-
+        
         if (cliente instanceof PersonaNatural natural) {
             if (natural.getIngresoMensual() > 0 && (cliente.getMontoTotalDeudas() / natural.getIngresoMensual()) > 0.40) {
                 puntaje -= 15;

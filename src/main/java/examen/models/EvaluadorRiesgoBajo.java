@@ -2,7 +2,7 @@ package examen.models;
 
 import org.springframework.stereotype.Component;
 
-@Component("evaluadorRiesgoBajo") // Spring bean
+@Component("evaluadorRiesgoBajo")
 public class EvaluadorRiesgoBajo extends EvaluadorRiesgo {
 
     @Override
@@ -16,8 +16,8 @@ public class EvaluadorRiesgoBajo extends EvaluadorRiesgo {
         resultadoBase.setAprobado(true);
         resultadoBase.setPuntajeFinal(puntajeFinal);
         resultadoBase.setMensaje("Cliente apto para préstamo con condiciones preferenciales.");
-        resultadoBase.setTasaInteres(6.5); // Example value
-        resultadoBase.setPlazoAprobado(Math.min(cliente.getPlazoEnMeses(), 24)); // Example, can be more complex
+        resultadoBase.setTasaInteres(6.5); 
+        resultadoBase.setPlazoAprobado(Math.min(cliente.getPlazoEnMeses(), 24)); 
         return resultadoBase;
     }
 }

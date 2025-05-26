@@ -32,7 +32,6 @@ public class EvaluacionRiesgoService {
     private HistorialEvaluacionRepository historialRepository;
 
     public RespuestaDto evaluarRiesgo(ConsultaDto request) {
-        // Create Cliente instance based on tipoCliente
         Cliente cliente;
         if ("NATURAL".equalsIgnoreCase(request.getTipoCliente())) {
             cliente = new PersonaNatural(
@@ -59,7 +58,6 @@ public class EvaluacionRiesgoService {
             throw new IllegalArgumentException("Tipo de cliente inválido: " + request.getTipoCliente());
         }
 
-        // Check if client is eligible
         if (!cliente.esAptoParaCredito()) {
             ResultadoEvaluacion resultado = new ResultadoEvaluacion();
             resultado.setNivelRiesgo("NO_APTO");
@@ -71,15 +69,15 @@ public class EvaluacionRiesgoService {
             return toResponseDTO(resultado);
         }
 
-        // Calculate final score
+        // Calcular score final
         EvaluadorRiesgo evaluador = getEvaluador(cliente);
         int puntajeFinal = evaluador.calcularPuntajeConPenalidades(cliente);
 
-        // Determine conditions
+        // Determinar condicines
         ResultadoEvaluacion resultado = new ResultadoEvaluacion();
         resultado = evaluador.determinarCondiciones(cliente, puntajeFinal, resultado);
 
-        // Save to history
+        // guardar historial 
         HistorialEvaluacion historial = new HistorialEvaluacion();
         historial.setClienteNombre(cliente.getNombre());
         historial.setTipoCliente(request.getTipoCliente());

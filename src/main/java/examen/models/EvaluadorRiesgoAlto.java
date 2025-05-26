@@ -2,7 +2,7 @@ package examen.models;
 
 import org.springframework.stereotype.Component;
 
-@Component("evaluadorRiesgoAlto") // Spring bean
+@Component("evaluadorRiesgoAlto") 
 public class EvaluadorRiesgoAlto extends EvaluadorRiesgo {
 
     @Override

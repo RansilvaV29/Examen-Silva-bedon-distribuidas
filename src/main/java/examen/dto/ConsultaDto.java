@@ -5,16 +5,16 @@ import java.util.List;
 import examen.models.Deuda;
 
 public class ConsultaDto {
-	private String tipoCliente; // "NATURAL" or "JURIDICA"
+	private String tipoCliente; // "NATURAL" o "JURIDICA"
     private String nombre;
     private int puntajeCrediticio;
     private List<Deuda> deudasActuales;
     private double montoSolicitado;
     private int plazoEnMeses;
-    // PersonaNatural-specific fields
+    // PersonaNatural
     private Integer edad;
     private Double ingresoMensual;
-    // PersonaJuridica-specific fields
+    // PersonaJuridica
     private Integer antiguedadAnios;
     private Double ingresoAnual;
     private Integer empleados;

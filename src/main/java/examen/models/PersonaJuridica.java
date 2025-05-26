@@ -32,8 +32,7 @@ public class PersonaJuridica extends Cliente {
 
     @Override
     public boolean esAptoParaCredito() {
-        // Example: Minimum antiquity requirement from example (implicitly makes client non-apto)
-        return antiguedadAnios >= 1; // Basic check, detailed logic in service
+        return antiguedadAnios >= 1;
     }
 
 	public int getAntiguedadAnios() {

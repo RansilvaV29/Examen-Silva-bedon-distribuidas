@@ -12,7 +12,7 @@ public abstract class Cliente {
     private int puntajeCrediticio;
     private List<Deuda> deudasActuales;
     private double montoSolicitado;
-    private int plazoEnMeses; // Loan term requested by client
+    private int plazoEnMeses;
 
     public Cliente(String nombre, int puntajeCrediticio, List<Deuda> deudasActuales, double montoSolicitado, int plazoEnMeses) {
         this.nombre = nombre;
